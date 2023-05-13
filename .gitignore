@@ -395,4 +395,11 @@ FodyWeavers.xsd
 *.msp
 
 # JetBrains Rider
+.idea/
 *.sln.iml
+*.ipr
+*.iws
+*.resharper
+*.ReSharper
+*.DotSettings
+*.csproj.user
