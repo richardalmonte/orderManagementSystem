@@ -1,0 +1,14 @@
+﻿### Create User
+
+POST {{host}}/api/v1/users
+Content-Type: application/json
+
+
+{
+    "name": "John Doe",
+    "email": "john.doe@domain.com",
+    "password": "123456"
+        
+}
+
+ 

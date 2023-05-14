@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0AD89427-67E5-4B30-9F8F-8C08AE0CE2D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{A33F2B05-366B-4D28-A807-A2AAF27BDC4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9744B714-1F94-4CC2-A65F-EE212A11E306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Tests", "src\UserService\Tests\UserService.Tests.csproj", "{30A5F3CF-F1AD-41B8-8143-A697962A819C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Api", "src\UserService\Api\UserService.Api.csproj", "{74819779-9D6D-4CA0-874A-58C140BBAB4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30A5F3CF-F1AD-41B8-8143-A697962A819C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A5F3CF-F1AD-41B8-8143-A697962A819C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A5F3CF-F1AD-41B8-8143-A697962A819C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A5F3CF-F1AD-41B8-8143-A697962A819C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74819779-9D6D-4CA0-874A-58C140BBAB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74819779-9D6D-4CA0-874A-58C140BBAB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74819779-9D6D-4CA0-874A-58C140BBAB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74819779-9D6D-4CA0-874A-58C140BBAB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A33F2B05-366B-4D28-A807-A2AAF27BDC4D} = {0AD89427-67E5-4B30-9F8F-8C08AE0CE2D6}
+		{9744B714-1F94-4CC2-A65F-EE212A11E306} = {A33F2B05-366B-4D28-A807-A2AAF27BDC4D}
+		{30A5F3CF-F1AD-41B8-8143-A697962A819C} = {9744B714-1F94-4CC2-A65F-EE212A11E306}
+		{74819779-9D6D-4CA0-874A-58C140BBAB4F} = {A33F2B05-366B-4D28-A807-A2AAF27BDC4D}
+	EndGlobalSection
+EndGlobal
