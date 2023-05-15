@@ -12,6 +12,7 @@ public class UserRegistrationRequestValidator : AbstractValidator<UserRegistrati
             .EmailAddress();
 
         RuleFor(x => x.Password)
-            .NotEmpty();
+            .NotEmpty()
+            .MaximumLength(16);
     }
 }

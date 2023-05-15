@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using UserService.Application.Interfaces;
 using UserService.Infrastructure.Persistence;
 using UserService.Infrastructure.Persistence.Repositories;
+using UserService.Infrastructure.Services;
 
 namespace UserService.Infrastructure;
 
@@ -21,9 +22,11 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddDbContext<UserServiceDbContext>(options =>
-            options.UseInMemoryDatabase("UserService"));
+            options.UseInMemoryDatabase("UserServiceDatabase"));
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
         return services;
     }
 }

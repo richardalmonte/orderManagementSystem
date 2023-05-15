@@ -9,7 +9,6 @@ using UserService.Domain.Entities;
 namespace UserService.Controllers.V1;
 
 [ApiController]
-[Route("api/v1/[controller]")]
 public class UsersController : ControllerBase
 {
     private readonly IMapper _mapper;
@@ -21,7 +20,7 @@ public class UsersController : ControllerBase
         _userService = userService;
     }
 
-    [HttpGet]
+    [HttpGet(ApiRoutes.Users.GetAll)]
     [ProducesResponseType(typeof(IEnumerable<UserResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetAllUsers()
@@ -32,13 +31,13 @@ public class UsersController : ControllerBase
             var userResponses = _mapper.Map<IEnumerable<UserResponse>>(users);
             return Ok(userResponses);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
     }
 
-    [HttpGet("{userId:guid}")]
+    [HttpGet(ApiRoutes.Users.Get)]
     [ProducesResponseType(typeof(IEnumerable<UserResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -56,7 +55,7 @@ public class UsersController : ControllerBase
             var userResponse = _mapper.Map<UserResponse>(user);
             return Ok(userResponse);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
@@ -64,6 +63,7 @@ public class UsersController : ControllerBase
 
 
     [HttpPost(ApiRoutes.Users.Create)]
+    [Consumes("application/json")]
     [ProducesResponseType(typeof(UserResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -85,14 +85,15 @@ public class UsersController : ControllerBase
             var response = _mapper.Map<UserResponse>(createdUser);
             return Created(locationUri, response);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
     }
 
 
-    [HttpPut("{userId:guid}")]
+    [HttpPut(ApiRoutes.Users.Update)]
+    [Consumes("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -113,13 +114,13 @@ public class UsersController : ControllerBase
             var userResponse = _mapper.Map<UserResponse>(updatedUser);
             return Ok(userResponse);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(StatusCodes.Status500InternalServerError);
         }
     }
 
-    [HttpDelete("{userId:guid}")]
+    [HttpDelete(ApiRoutes.Users.Delete)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
