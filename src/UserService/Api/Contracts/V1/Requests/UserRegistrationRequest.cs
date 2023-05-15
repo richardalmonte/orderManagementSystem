@@ -1,7 +1,9 @@
-﻿namespace UserService.Contracts.V1.Requests;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class UserRegistrationRequest
+namespace UserService.Contracts.V1.Requests;
+
+public record UserRegistrationRequest
 {
-    public string Email { get; set; }
+    [Required] public string Email { get; set; }
     public string Password { get; set; }
 }
