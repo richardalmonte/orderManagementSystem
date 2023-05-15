@@ -131,9 +131,7 @@ public class UserControllerTest
         objectResult?.StatusCode.Should().Be(StatusCodes.Status400BadRequest);
     }
 
-    
-    
-    
+
     [Fact]
     public async void CreateUser_WhenServiceThrowsException_ShouldReturn500StatusCode()
     {
@@ -152,6 +150,24 @@ public class UserControllerTest
         result.Should().BeOfType<StatusCodeResult>();
         var objectResult = result as StatusCodeResult;
         objectResult?.StatusCode.Should().Be(StatusCodes.Status500InternalServerError);
+    }
 
+    [Fact]
+    public async void GetUser_WhenCalledWithValidId_ShouldReturn200StatusCode()
+    {
+        // Arrange
+        var userId = _fixture.Create<Guid>();
+        var actualUser = _fixture.Create<User>();
+        _mapper.Setup(x => x.Map<UserResponse>(actualUser)).Returns(_fixture.Create<UserResponse>());
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync(actualUser);
+
+        // Act
+        var result = await _sut.GetUser(userId);
+
+        // Assert
+
+        result.Should().BeOfType<OkResult>();
+        var objectResult = result as OkResult;
+        objectResult?.StatusCode.Should().Be(StatusCodes.Status200OK);
     }
 }
