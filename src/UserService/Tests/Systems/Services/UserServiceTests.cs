@@ -30,16 +30,28 @@ public class UserServiceTests
     {
         // Arrange
         var user = _fixture.Create<User>();
-        _context.Setup(x => x.SaveChangesAsync(default)).ReturnsAsync(1);
-        _context.Setup(x => x.AddAsync(user, default)).Callback(() => _context.Object.Users.AddAsync(user, default));
+        _userRepository.Setup(x => x.CreateUserAsync(user)).ReturnsAsync(user);
 
         // Act
 
         var response = await _sut.CreateUserAsync(user);
 
         // Assert
-        _context.Verify(x => x.Users.AddAsync(user, default), Times.Once);
-        _context.Verify(x => x.SaveChangesAsync(default), Times.Once);
+        
+        _userRepository.Verify(x=> x.CreateUserAsync(user), Times.Once);
         response.Should().BeEquivalentTo(user);
+    }
+    
+    [Fact]
+    public async void CreateUserAsync_ShouldThrowArgumentNullException_WhenCalledWithNullUser()
+    {
+        // Arrange
+        User user = null;
+
+        // Act
+        var action = async () => await _sut.CreateUserAsync(user);
+
+        // Assert
+        await action.Should().ThrowAsync<ArgumentNullException>();
     }
 }

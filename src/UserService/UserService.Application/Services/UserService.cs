@@ -14,6 +14,11 @@ public class UserService : IUserService
 
     public Task<User> CreateUserAsync(User user)
     {
-        throw new NotImplementedException();
+        if (user is null)
+        {
+            throw new ArgumentNullException(nameof(user));
+        }
+
+        return _userRepository.CreateUserAsync(user);
     }
 }

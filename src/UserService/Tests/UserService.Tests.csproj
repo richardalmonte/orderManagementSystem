@@ -31,4 +31,8 @@
       <ProjectReference Include="..\Api\UserService.Api.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Systems\Repositories\" />
+    </ItemGroup>
+
 </Project>
