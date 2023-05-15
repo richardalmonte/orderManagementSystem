@@ -46,7 +46,7 @@ public class UserServiceTests
     public async void CreateUserAsync_ShouldThrowArgumentNullException_WhenCalledWithNullUser()
     {
         // Arrange
-        User user = null;
+        User user = null!;
 
         // Act
         var action = async () => await _sut.CreateUserAsync(user);
@@ -75,7 +75,7 @@ public class UserServiceTests
     {
         // Arrange
         var userId = Guid.NewGuid();
-        _userRepository.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync((User)null);
+        _userRepository.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync((User)null!);
 
         // Act
         var result = await _sut.GetUserByIdAsync(userId);
@@ -148,7 +148,7 @@ public class UserServiceTests
     public async Task UpdateUserAsync_ShouldThrowArgumentNullException_WhenCalledWithNullUser()
     {
         // Arrange
-        User user = null;
+        User user = null!;
 
         // Act
         var action = async () => await _sut.UpdateUserAsync(user);

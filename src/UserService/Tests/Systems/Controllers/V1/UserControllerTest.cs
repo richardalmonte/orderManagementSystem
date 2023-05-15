@@ -166,8 +166,204 @@ public class UserControllerTest
 
         // Assert
 
-        result.Should().BeOfType<OkResult>();
-        var objectResult = result as OkResult;
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = result as OkObjectResult;
         objectResult?.StatusCode.Should().Be(StatusCodes.Status200OK);
     }
+
+    [Fact]
+    public async Task GetUser_WhenUserDoesNotExist_ReturnsNotFound()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync((User)null!);
+
+        // Act
+        var result = await _sut.GetUser(userId);
+
+        // Assert
+        result.Should().BeOfType<NotFoundResult>();
+    }
+
+    [Fact]
+    public async Task GetUser_WhenCalledWithValidId_ShouldCallService()
+    {
+        // Arrange
+        var userId = _fixture.Create<Guid>();
+        var actualUser = _fixture.Create<User>();
+        _mapper.Setup(x => x.Map<UserResponse>(actualUser)).Returns(_fixture.Create<UserResponse>());
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync(actualUser);
+
+        // Act
+        await _sut.GetUser(userId);
+
+        // Assert
+        _userService.Verify(x => x.GetUserByIdAsync(userId), Times.Once);
+    }
+
+    [Fact]
+    public async Task GetUser_WhenCalledWithValidId_ShouldCallMapper()
+    {
+        // Arrange
+        var userId = _fixture.Create<Guid>();
+        var actualUser = _fixture.Create<User>();
+        _mapper.Setup(x => x.Map<UserResponse>(actualUser)).Returns(_fixture.Create<UserResponse>());
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync(actualUser);
+
+        // Act
+        await _sut.GetUser(userId);
+
+        // Assert
+        _mapper.Verify(x => x.Map<UserResponse>(actualUser), Times.Once);
+    }
+
+    [Fact]
+    public async Task GetUser_WhenServiceThrowsException_ShouldReturn500StatusCode()
+    {
+        // Arrange
+        var userId = _fixture.Create<Guid>();
+        var actualUser = _fixture.Create<User>();
+        _mapper.Setup(x => x.Map<UserResponse>(actualUser)).Returns(_fixture.Create<UserResponse>());
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ThrowsAsync(new Exception());
+
+        // Act
+        var result = await _sut.GetUser(userId);
+
+        // Assert
+        result.Should().BeOfType<StatusCodeResult>();
+        var objectResult = result as StatusCodeResult;
+        objectResult?.StatusCode.Should().Be(StatusCodes.Status500InternalServerError);
+    }
+    
+    [Fact]
+    public async void GetAllUsers_WhenCalled_ShouldReturn200StatusCode()
+    {
+        // Arrange
+        var actualUsers = _fixture.CreateMany<User>().ToList();
+        _mapper.Setup(x => x.Map<IEnumerable<UserResponse>>(actualUsers)).Returns(_fixture.CreateMany<UserResponse>().ToList());
+        _userService.Setup(x => x.GetAllUsersAsync()).ReturnsAsync(actualUsers);
+
+        // Act
+        var result = await _sut.GetAllUsers();
+
+        // Assert
+
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = result as OkObjectResult;
+        objectResult?.StatusCode.Should().Be(StatusCodes.Status200OK);
+    }
+    
+    [Fact]
+    public async void GetAllUsers_WhenCalled_ShouldCallService()
+    {
+        // Arrange
+        var actualUsers = _fixture.CreateMany<User>().ToList();
+        _mapper.Setup(x => x.Map<IEnumerable<UserResponse>>(actualUsers)).Returns(_fixture.CreateMany<UserResponse>().ToList());
+        _userService.Setup(x => x.GetAllUsersAsync()).ReturnsAsync(actualUsers);
+
+        // Act
+        await _sut.GetAllUsers();
+
+        // Assert
+        _userService.Verify(x => x.GetAllUsersAsync(), Times.Once);
+    } 
+    
+    [Fact]
+    public async void GetAllUsers_WhenCalled_ShouldCallMapper()
+    {
+        // Arrange
+        var actualUsers = _fixture.CreateMany<User>().ToList();
+        _mapper.Setup(x => x.Map<IEnumerable<UserResponse>>(actualUsers)).Returns(_fixture.CreateMany<UserResponse>().ToList());
+        _userService.Setup(x => x.GetAllUsersAsync()).ReturnsAsync(actualUsers);
+
+        // Act
+        await _sut.GetAllUsers();
+
+        // Assert
+        _mapper.Verify(x => x.Map<IEnumerable<UserResponse>>(actualUsers), Times.Once);
+    }
+    
+    [Fact]
+    public async void GetAllUsers_WhenServiceThrowsException_ShouldReturn500StatusCode()
+    {
+        // Arrange
+        var actualUsers = _fixture.CreateMany<User>().ToList();
+        _mapper.Setup(x => x.Map<IEnumerable<UserResponse>>(actualUsers)).Returns(_fixture.CreateMany<UserResponse>().ToList());
+        _userService.Setup(x => x.GetAllUsersAsync()).ThrowsAsync(new Exception());
+
+        // Act
+        var result = await _sut.GetAllUsers();
+
+        // Assert
+        result.Should().BeOfType<StatusCodeResult>();
+        var objectResult = result as StatusCodeResult;
+        objectResult?.StatusCode.Should().Be(StatusCodes.Status500InternalServerError);
+    }
+    
+    [Fact]
+    public async Task UpdateUser_WhenUserExists_ReturnsOk()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        var user = new User { Id = userId };
+        var userUpdateRequest = new UserUpdateRequest();
+        var updatedUser = new User();
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync(user);
+        _userService.Setup(x => x.UpdateUserAsync(It.IsAny<User>())).ReturnsAsync(updatedUser);
+        _mapper.Setup(x => x.Map(userUpdateRequest, user)).Returns(updatedUser);
+        var userResponse = new UserResponse();
+        _mapper.Setup(x => x.Map<UserResponse>(updatedUser)).Returns(userResponse);
+
+        // Act
+        var result = await _sut.UpdateUser(userId, userUpdateRequest);
+
+        // Assert
+        result.Should().BeOfType<OkObjectResult>();
+        var objectResult = result as OkObjectResult;
+        objectResult?.Value.Should().BeEquivalentTo(userResponse);
+    }
+
+    [Fact]
+    public async Task UpdateUser_WhenUserDoesNotExist_ReturnsNotFound()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync((User)null!);
+
+        // Act
+        var result = await _sut.UpdateUser(userId, new UserUpdateRequest());
+
+        // Assert
+        result.Should().BeOfType<NotFoundResult>();
+    }
+
+    [Fact]
+    public async Task DeleteUser_WhenUserExists_ReturnsNoContent()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        var user = new User { Id = userId };
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync(user);
+
+        // Act
+        var result = await _sut.DeleteUser(userId);
+
+        // Assert
+        result.Should().BeOfType<NoContentResult>();
+    }
+
+    [Fact]
+    public async Task DeleteUser_WhenUserDoesNotExist_ReturnsNotFound()
+    {
+        // Arrange
+        var userId = Guid.NewGuid();
+        _userService.Setup(x => x.GetUserByIdAsync(userId)).ReturnsAsync((User)null!);
+
+        // Act
+        var result = await _sut.DeleteUser(userId);
+
+        // Assert
+        result.Should().BeOfType<NotFoundResult>();
+    }
+
 }

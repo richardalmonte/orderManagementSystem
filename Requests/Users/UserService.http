@@ -1,14 +1,22 @@
-﻿### Create User
+﻿
+
+### Get Users
+GET {{host}}/api/v1/Users
+accept: application/json
+
+###
+
+
+### Create User
 
 POST {{host}}/api/v1/users
 Content-Type: application/json
 
-
 {
-    "name": "John Doe",
-    "email": "john.doe@domain.com",
-    "password": "123456"
-        
+  "name": "John",
+  "lastname": "Doe",
+  "email": "john.doe@email.com",
+  "password": "123456"
 }
 
  
