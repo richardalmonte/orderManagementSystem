@@ -1,8 +1,13 @@
 using UserService;
+using UserService.Application;
+using UserService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddPresentation();
+    builder.Services
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
 }
 
 
