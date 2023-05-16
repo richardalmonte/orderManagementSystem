@@ -81,7 +81,7 @@ public class CategoriesController : ControllerBase
             var createdCategory = await _categoryService.CreateCategoryAsync(categoryRequest);
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" +
-                              ApiRoutes.Categories.Get.Replace("{CategoryId}", createdCategory.Id.ToString());
+                              ApiRoutes.Categories.Get.Replace("{categoryId}", createdCategory.Id.ToString());
 
             var response = _mapper.Map<CategoryResponse>(createdCategory);
             return Created(locationUri, response);

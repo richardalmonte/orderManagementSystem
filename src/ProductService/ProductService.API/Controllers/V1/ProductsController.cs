@@ -80,7 +80,7 @@ public class ProductsController : ControllerBase
 
             var createdProduct = await _productService.CreateProductAsync(productRequest);
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.Products.Get.Replace("{ProductId}", createdProduct.Id.ToString());
+            var locationUri = baseUrl + "/" + ApiRoutes.Products.Get.Replace("{productId}", createdProduct.Id.ToString());
 
             var response = _mapper.Map<ProductResponse>(createdProduct);
             return Created(locationUri, response);
