@@ -29,7 +29,10 @@ public class UserRepository : IUserRepository
             throw new ArgumentNullException(nameof(userId));
         }
 
-        return await _context.Users.FirstOrDefaultAsync(x => x.Id == userId);
+        var response = await _context.Users
+            .FirstOrDefaultAsync(x => x.Id == userId);
+
+        return response ?? throw new Exception("User not found");
     }
 
     public async Task<IEnumerable<User>> GetAllUsersAsync()

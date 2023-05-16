@@ -10,7 +10,12 @@ public class AddressRegistrationRequestValidator : AbstractValidator<AddressRegi
         RuleFor(x => x.UserId)
             .NotEmpty();
 
-        RuleFor(x => x.DeliveryAddressId)
-            .NotEmpty();
+        RuleFor(x => x.Street)
+            .NotEmpty()
+            .MaximumLength(100);
+
+        RuleFor(x => x.City)
+            .NotEmpty()
+            .MaximumLength(100);
     }
 }

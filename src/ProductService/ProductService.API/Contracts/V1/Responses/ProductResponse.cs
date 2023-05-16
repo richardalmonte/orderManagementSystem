@@ -9,4 +9,6 @@ public record ProductResponse
     public Guid CategoryId { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+
+    public CategoryResponse Category { get; set; }
 }

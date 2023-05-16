@@ -9,6 +9,7 @@ public class ProductMappingConfig : AutoMapper.Profile
     public ProductMappingConfig()
     {
         CreateMap<ProductRegistrationRequest, Product>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
             .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))

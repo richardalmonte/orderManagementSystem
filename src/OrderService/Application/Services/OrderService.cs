@@ -12,11 +12,11 @@ public class OrderService : IOrderService
         _orderRepository = orderRepository;
     }
 
-    public Task<Order> CreateOrderAsync(Order order)
+    public Task<Order> CreateOrderAsync(Order orderRequest)
     {
-        ArgumentNullException.ThrowIfNull(order);
+        ArgumentNullException.ThrowIfNull(orderRequest);
 
-        return _orderRepository.CreateOrderAsync(order);
+        return _orderRepository.CreateOrderAsync(orderRequest);
     }
 
     public async Task<Order> GetOrderByIdAsync(Guid orderId)

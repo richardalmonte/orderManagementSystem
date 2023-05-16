@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace OrderService.Common.Mapping;
+namespace OrderService.Api.Common.Mapping;
 
 public static class DependencyInjection
 {

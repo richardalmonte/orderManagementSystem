@@ -15,12 +15,21 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(x => x.UserId)
             .IsRequired();
 
-        builder.Property(x => x.DeliveryAddressId)
-            .IsRequired();
+        builder.Property(x => x.Street)
+            .IsRequired()
+            .HasMaxLength(100);
 
-        builder.HasMany(x => x.AddressItems)
-            .WithOne(x => x.Addresses)
-            .HasForeignKey(x => x.AddressId)
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.Property(x => x.City)
+            .IsRequired()
+            .HasMaxLength(100);
+
+        builder.Property(x => x.State)
+            .HasMaxLength(100);
+
+        builder.Property(x => x.Country)
+            .HasMaxLength(100);
+
+        builder.Property(x => x.ZipCode)
+            .HasMaxLength(10);
     }
 }

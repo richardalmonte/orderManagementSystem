@@ -29,7 +29,9 @@ public class AddressRepository : IAddressRepository
             throw new ArgumentNullException(nameof(addressId));
         }
 
-        return await _context.Addresses.FirstOrDefaultAsync(x => x.Id == addressId);
+        var response = await _context.Addresses.FirstOrDefaultAsync(x => x.Id == addressId);
+
+        return response ?? throw new Exception("Address not found");
     }
 
     public async Task<IEnumerable<Address>> GetAllAddressesAsync()

@@ -5,12 +5,12 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using OrderService.Api.Contracts.V1.Requests;
+using OrderService.Api.Contracts.V1.Responses;
+using OrderService.Api.Controllers.V1;
+using OrderService.Api.Validators;
 using OrderService.Application.Interfaces;
-using OrderService.Contracts.V1.Requests;
-using OrderService.Contracts.V1.Responses;
-using OrderService.Controllers.V1;
 using OrderService.Domain.Entities;
-using OrderService.Validators;
 
 namespace OrderService.Tests.Systems.Controllers.V1;
 

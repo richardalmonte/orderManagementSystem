@@ -1,4 +1,4 @@
-using OrderService;
+using OrderService.Api;
 using OrderService.Application;
 using OrderService.Infrastructure;
 

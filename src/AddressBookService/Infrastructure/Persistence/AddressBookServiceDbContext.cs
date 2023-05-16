@@ -16,7 +16,6 @@ public class AddressBookServiceDbContext : DbContext
     }
 
     public DbSet<Address> Addresses { get; set; } = default!;
-    public DbSet<AddressItem> AddressItems { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

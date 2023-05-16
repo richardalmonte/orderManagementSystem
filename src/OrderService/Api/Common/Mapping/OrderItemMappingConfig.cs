@@ -1,14 +1,15 @@
-﻿using OrderService.Contracts.V1.Requests;
-using OrderService.Contracts.V1.Responses;
+﻿using OrderService.Api.Contracts.V1.Requests;
+using OrderService.Api.Contracts.V1.Responses;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Common.Mapping;
+namespace OrderService.Api.Common.Mapping;
 
 public class OrderItemMappingConfig : AutoMapper.Profile
 {
     public OrderItemMappingConfig()
     {
         CreateMap<OrderItemRegistrationRequest, OrderItem>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
             .ForMember(dest => dest.OrderId, opt => opt.MapFrom(src => src.OrderId))
             .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
             .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.Quantity))

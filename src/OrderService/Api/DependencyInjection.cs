@@ -1,8 +1,8 @@
 ﻿using Microsoft.OpenApi.Models;
-using OrderService.Common.Mapping;
-using OrderService.Validators;
+using OrderService.Api.Common.Mapping;
+using OrderService.Api.Validators;
 
-namespace OrderService;
+namespace OrderService.Api;
 
 public static class DependencyInjection
 {

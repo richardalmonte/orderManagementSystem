@@ -2,8 +2,13 @@
 
 public record AddressItemUpdateRequest
 {
-    public Guid AddressId { get; set; }
-    public Guid ProductId { get; set; }
-    public int Quantity { get; set; }
-    public decimal UnitPrice { get; set; }
+    public string Street { get; set; }
+
+    public string City { get; set; }
+
+    public string State { get; set; }
+
+    public string Country { get; set; }
+
+    public string ZipCode { get; set; } 
 }

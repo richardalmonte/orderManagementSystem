@@ -1,4 +1,4 @@
-﻿namespace OrderService.Contracts.V1.Requests;
+﻿namespace OrderService.Api.Contracts.V1.Requests;
 
 public record OrderItemUpdateRequest
 {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using OrderService.Contracts.V1.Requests;
+using OrderService.Api.Contracts.V1.Requests;
 
-namespace OrderService.Validators;
+namespace OrderService.Api.Validators;
 
 public class OrderItemRegistrationRequestValidator : AbstractValidator<OrderItemRegistrationRequest>
 {

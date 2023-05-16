@@ -1,0 +1,64 @@
+﻿### OrderService API Requests
+
+### Create Order
+POST {{host}}/api/v1/Orders
+Content-Type: application/json
+
+{
+  "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "deliveryAddressId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "orderItems": [
+    {
+      "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "quantity": 2,
+      "unitPrice": 19.99
+    },
+    {
+      "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+      "quantity": 1,
+      "unitPrice": 29.99
+    }
+  ]
+}
+
+### Get All Orders
+GET {{host}}/api/v1/Orders
+Content-Type: application/json
+
+### Get Specific Order
+< {%
+    request.variables.set("orderId", "df32e516-de46-4009-a99f-bc81b5d241a7")
+%}
+GET {{host}}/api/v1/Orders/{{orderId}}
+Content-Type: application/json
+
+### Update Order
+< {%
+    request.variables.set("orderId", "4fcb90ae-f33b-4b38-9e19-35d837cb9f8b")
+%}
+PUT {{host}}/api/v1/Orders/{{orderId}}
+Content-Type: application/json
+
+{
+  "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "deliveryAddressId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "orderItems": [
+    {
+      "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "quantity": 1,
+      "unitPrice": 19.99
+    },
+    {
+      "productId": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+      "quantity": 2,
+      "unitPrice": 29.99
+    }
+  ]
+}
+
+### Delete Order
+< {%
+    request.variables.set("orderId", "df32e516-de46-4009-a99f-bc81b5d241a7")
+%}
+DELETE {{host}}/api/v1/Orders/{{orderId}}
+Content-Type: application/json

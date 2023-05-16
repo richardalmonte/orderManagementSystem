@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using OrderService.Api.Contracts;
+using OrderService.Api.Contracts.V1.Requests;
+using OrderService.Api.Contracts.V1.Responses;
 using OrderService.Application.Interfaces;
-using OrderService.Contracts;
-using OrderService.Contracts.V1.Requests;
-using OrderService.Contracts.V1.Responses;
 using OrderService.Domain.Entities;
 
-namespace OrderService.Controllers.V1;
+namespace OrderService.Api.Controllers.V1;
 
 [ApiController]
 public class OrdersController : ControllerBase
@@ -76,6 +76,7 @@ public class OrdersController : ControllerBase
                 return BadRequest(ModelState);
             }
 
+            
             var orderRequest = _mapper.Map<Order>(request);
 
             var createdOrder = await _orderService.CreateOrderAsync(orderRequest);

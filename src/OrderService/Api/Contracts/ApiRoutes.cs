@@ -1,4 +1,4 @@
-﻿namespace OrderService.Contracts;
+﻿namespace OrderService.Api.Contracts;
 
 public static class ApiRoutes
 {

@@ -29,12 +29,18 @@ public class CategoryRepository : ICategoryRepository
             throw new ArgumentNullException(nameof(categoryId));
         }
 
-        return await _context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
+        var response = await _context.Categories
+            .Include(x => x.Products)
+            .FirstOrDefaultAsync(x => x.Id == categoryId);
+
+        return response ?? throw new Exception("Category not found");
     }
 
     public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
     {
-        return await _context.Categories.ToListAsync();
+        return await _context.Categories
+            .Include(x => x.Products)
+            .ToListAsync();
     }
 
     public async Task<Category> UpdateCategoryAsync(Category category)

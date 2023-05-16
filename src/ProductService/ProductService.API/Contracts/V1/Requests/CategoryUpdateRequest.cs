@@ -3,4 +3,5 @@
 public record CategoryUpdateRequest
 {
     public string Name { get; set; }
+    
 }

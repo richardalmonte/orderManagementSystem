@@ -3,4 +3,5 @@
 public record CategoryRegistrationRequest
 {
     public string Name { get; set; }
+    
 }

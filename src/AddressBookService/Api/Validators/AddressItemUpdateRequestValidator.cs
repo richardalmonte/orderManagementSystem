@@ -7,16 +7,12 @@ public class AddressItemUpdateRequestValidator : AbstractValidator<AddressItemUp
 {
     public AddressItemUpdateRequestValidator()
     {
-        RuleFor(x => x.AddressId)
-            .NotEmpty();
+        RuleFor(x => x.Street)
+            .NotEmpty()
+            .MaximumLength(100);
 
-        RuleFor(x => x.ProductId)
-            .NotEmpty();
-
-        RuleFor(x => x.Quantity)
-            .GreaterThan(0);
-
-        RuleFor(x => x.UnitPrice)
-            .GreaterThan(0);
+        RuleFor(x => x.City)
+            .NotEmpty()
+            .MaximumLength(100);
     }
 }

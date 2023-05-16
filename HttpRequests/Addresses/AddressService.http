@@ -1,0 +1,51 @@
+﻿### AddressService API Requests
+
+### Create Address
+POST {{host}}/api/v1/Addresses
+Content-Type: application/json
+
+{
+  "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "street": "123 Main St",
+  "city": "Springfield",
+  "state": "IL",
+  "country": "USA",
+  "zipCode": "62701"
+}
+
+### Get All Addresses
+GET {{host}}/api/v1/Addresses
+Content-Type: application/json
+
+### Get Specific Address
+< {%
+    request.variables.set("addressId", "37cae54c-fde3-4941-b166-52892a0e6550")
+%}
+
+GET {{host}}/api/v1/Addresses/{{addressId}}
+Content-Type: application/json
+
+### Update Address
+< {%
+    request.variables.set("addressId", "cdd7df40-a9ee-49cb-a204-b42aacb5d1da")
+%}
+
+PUT {{host}}/api/v1/Addresses/{{addressId}}
+Content-Type: application/json
+
+{
+  "userId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "street": "456 Elm St",
+  "city": "Springfield",
+  "state": "IL",
+  "country": "USA",
+  "zipCode": "62701"
+}
+
+### Delete Address
+< {%
+    request.variables.set("addressId", "4dd1dff8-e071-4195-afdb-97bf178f6e81")
+%}
+
+DELETE {{host}}/api/v1/Addresses/{{addressId}}
+Content-Type: application/json

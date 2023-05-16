@@ -9,6 +9,7 @@ public class CategoryMappingConfig : AutoMapper.Profile
     public CategoryMappingConfig()
     {
         CreateMap<CategoryRegistrationRequest, Category>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ReverseMap();
 

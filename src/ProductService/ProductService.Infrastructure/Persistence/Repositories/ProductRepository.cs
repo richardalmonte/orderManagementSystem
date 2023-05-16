@@ -19,6 +19,9 @@ public class ProductRepository : IProductRepository
 
         var productEntry = await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
+
+        await _context.Entry(productEntry.Entity).Reference(p => p.Category).LoadAsync();
+
         return productEntry.Entity;
     }
 
@@ -29,12 +32,20 @@ public class ProductRepository : IProductRepository
             throw new ArgumentNullException(nameof(productId));
         }
 
-        return await _context.Products.FirstOrDefaultAsync(x => x.Id == productId);
+        var response = await _context.Products
+            .Include(x => x.Category)
+            .FirstOrDefaultAsync(x => x.Id == productId);
+
+        return response ?? throw new Exception("Product not found");
     }
 
     public async Task<IEnumerable<Product>> GetAllProductsAsync()
     {
-        return await _context.Products.ToListAsync();
+        var response = await _context.Products
+            .Include(x => x.Category)
+            .ToListAsync();
+
+        return response;
     }
 
     public async Task<Product> UpdateProductAsync(Product product)

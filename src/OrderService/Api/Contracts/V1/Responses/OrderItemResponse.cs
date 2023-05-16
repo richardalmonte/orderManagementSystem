@@ -1,4 +1,4 @@
-﻿namespace OrderService.Contracts.V1.Responses;
+﻿namespace OrderService.Api.Contracts.V1.Responses;
 
 public record OrderItemResponse
 {

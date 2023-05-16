@@ -29,12 +29,20 @@ public class OrderRepository : IOrderRepository
             throw new ArgumentNullException(nameof(orderId));
         }
 
-        return await _context.Orders.FirstOrDefaultAsync(x => x.Id == orderId);
+        var response = await _context
+            .Orders
+            .Include(x => x.OrderItems)
+            .FirstOrDefaultAsync(x => x.Id == orderId);
+
+        return response ?? throw new Exception("Order not found");
     }
 
     public async Task<IEnumerable<Order>> GetAllOrdersAsync()
     {
-        return await _context.Orders.ToListAsync();
+        return await _context
+            .Orders
+            .Include(x => x.OrderItems)
+            .ToListAsync();
     }
 
     public async Task<Order> UpdateOrderAsync(Order order)

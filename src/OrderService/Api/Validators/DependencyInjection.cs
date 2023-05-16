@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using FluentValidation;
 
-namespace OrderService.Validators;
+namespace OrderService.Api.Validators;
 
 public static class DependencyInjection
 {

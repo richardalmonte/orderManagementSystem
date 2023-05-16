@@ -20,15 +20,15 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "string",
-  "description": "string",
-  "price": 0,
-  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "name": "Product 1",
+  "description": "Product 1 Description",
+  "price": 10,
+  "categoryId": "77776667-de2b-46d1-8fa8-736d247603f1"
 }
 
 ### Update Product
 < {%
-    request.variables.set("productId", "8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc")
+    request.variables.set("productId", "274b9e37-4a53-4d57-9ccc-d11c3da20c0d")
 %}
 
 PUT {{host}}/api/v1/Products/{{productId}}
@@ -39,7 +39,7 @@ Accept: application/json
   "name": "Product 1",
   "description": "Product 1 Description",
   "price": 10,
-  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "categoryId": "fd7f8090-4e66-4463-ace4-4edc477d4396"
 }
 
 ### Delete Product
