@@ -17,9 +17,9 @@ public class ProductRepository : IProductRepository
     {
         ArgumentNullException.ThrowIfNull(product);
 
-        var ProductEntry = await _context.Products.AddAsync(product);
+        var productEntry = await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
-        return ProductEntry.Entity;
+        return productEntry.Entity;
     }
 
     public async Task<Product> GetProductByIdAsync(Guid productId)

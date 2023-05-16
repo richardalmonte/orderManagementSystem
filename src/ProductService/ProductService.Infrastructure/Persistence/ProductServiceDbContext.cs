@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductService.Application.Interfaces;
 using ProductService.Domain.Entities;
-using BaseEntity = UserService.Domain.Entities.BaseEntity;
 
 namespace ProductService.Infrastructure.Persistence;
 
 public class ProductServiceDbContext : DbContext
 {
-    public readonly IDateTimeProvider _dateTime;
+    private readonly IDateTimeProvider _dateTime;
 
     public ProductServiceDbContext(DbContextOptions<ProductServiceDbContext> options, IDateTimeProvider dateTime)
         : base(options)
@@ -16,6 +15,7 @@ public class ProductServiceDbContext : DbContext
     }
 
     public DbSet<Product> Products { get; set; } = default!;
+    public DbSet<Category> Categories { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

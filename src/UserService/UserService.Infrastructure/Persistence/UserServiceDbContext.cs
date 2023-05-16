@@ -6,7 +6,7 @@ namespace UserService.Infrastructure.Persistence;
 
 public class UserServiceDbContext : DbContext
 {
-    public readonly IDateTimeProvider _dateTime;
+    private readonly IDateTimeProvider _dateTime;
 
     public UserServiceDbContext(DbContextOptions<UserServiceDbContext> options, IDateTimeProvider dateTime)
         : base(options)

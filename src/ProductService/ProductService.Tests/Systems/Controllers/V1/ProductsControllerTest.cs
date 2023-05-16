@@ -15,7 +15,7 @@ using ProductService.Domain.Entities;
 
 namespace ProductService.Tests.Systems.Controllers.V1;
 
-public class ProductControllerTest
+public class ProductsControllerTest
 {
     private readonly Fixture _fixture;
     private readonly ProductsController _sut;
@@ -26,7 +26,7 @@ public class ProductControllerTest
     private const string ContextHost = "localhost";
     private const int ContextPort = 5000;
 
-    public ProductControllerTest()
+    public ProductsControllerTest()
     {
         _fixture = new Fixture();
         _mapper = new Mock<IMapper>();

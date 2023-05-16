@@ -10,10 +10,18 @@ public static class ApiRoutes
     public static class Products
     {
         public const string Create = Base + "/Products";
-        public const string Update = Base + "/Products/{ProductId}";
+        public const string Update = Base + "/Products/{productId}";
         public const string GetAll = Base + "/Products";
-        public const string Get = Base + "/Products/{ProductId}";
-        public const string Delete = Base + "/Products/{ProductId}";
+        public const string Get = Base + "/Products/{productId}";
+        public const string Delete = Base + "/Products/{productId}";
     }
 
+    public static class Categories
+    {
+        public const string Create = Base + "/Categories";
+        public const string Update = Base + "/Categories/{categoryId}";
+        public const string GetAll = Base + "/Categories";
+        public const string Get = Base + "/Categories/{categoryId}";
+        public const string Delete = Base + "/Categories/{categoryId}";
+    }
 }

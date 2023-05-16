@@ -1,0 +1,52 @@
+﻿### Get Products
+
+GET {{host}}/api/v1/Products
+accept: application/json
+
+
+### Get Product
+< {%
+    request.variables.set("productId", "8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc")
+%}
+
+
+GET {{host}}/api/v1/Products/{{productId}}
+accept: application/json
+
+### Create Product
+
+POST {{host}}/api/v1/Products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+### Update Product
+< {%
+    request.variables.set("productId", "8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc")
+%}
+
+PUT {{host}}/api/v1/Products/{{productId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Product 1",
+  "description": "Product 1 Description",
+  "price": 10,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+### Delete Product
+< {%
+    request.variables.set("productId", "84935a2d-ff59-47ea-9a68-b5a10dfea0c8")
+%}
+
+DELETE {{host}}/api/v1/Products/{{productId}}
+accept: application/json
+

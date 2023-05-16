@@ -1,0 +1,723 @@
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T112413.200.json
+
+###
+
+DELETE https://localhost:7042/api/v1/Categories/cf18e533-7555-4578-bc71-464d6da8fe35
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+PUT https://localhost:7042/api/v1/Categories/4dd1dff8-e071-4195-afdb-97bf178f6e81
+Content-Type: application/json
+Accept: application/json
+Content-Length: 77
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1 Updated",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T112405.200.json
+
+###
+
+PUT https://localhost:7042/api/v1/Categories/4dd1dff8-e071-4195-afdb-97bf178f6e81
+Content-Type: application/json
+Accept: application/json
+Content-Length: 77
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1 Updated",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T112338.200.json
+
+###
+
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T112127.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+Content-Type: application/json
+Accept: application/json
+Content-Length: 69
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T112115.201.json
+
+###
+
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T112049.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+Content-Type: application/json
+Accept: application/json
+Content-Length: 69
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T112041.201.json
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+Content-Type: application/json
+Accept: application/json
+Content-Length: 69
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T111848.500.json
+
+###
+
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111836.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+Content-Type: application/json
+Accept: application/json
+Content-Length: 69
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T111736.500.json
+
+###
+
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111732.200.json
+
+###
+
+DELETE https://localhost:7042/api/v1/Products/84935a2d-ff59-47ea-9a68-b5a10dfea0c8
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET https://localhost:7042/api/v1/Products
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111625.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Products
+Content-Type: application/json
+Accept: application/json
+Content-Length: 119
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+<> 2023-05-16T111622.201.json
+
+###
+
+GET https://localhost:7042/api/v1/Products
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111613.200.json
+
+###
+
+GET https://localhost:7042/api/v1/Products/8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111611.200.json
+
+###
+
+GET https://localhost:7042/api/v1/Products
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111554.200.json
+
+###
+
+PUT https://localhost:7042/api/v1/Products/8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc
+Content-Type: application/json
+Accept: application/json
+Content-Length: 138
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Product 1",
+  "description": "Product 1 Description",
+  "price": 10,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+<> 2023-05-16T111544.200.json
+
+###
+
+PUT https://localhost:7042/api/v1/Products/8ad9e2d9-7214-4404-8fbd-ad8a3dbbd8bc
+accept: application/json
+Content-Length: 138
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Product 1",
+  "description": "Product 1 Description",
+  "price": 10,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+###
+
+GET https://localhost:7042/api/v1/Products
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T111311.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Products
+Content-Type: application/json
+Accept: application/json
+Content-Length: 119
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+<> 2023-05-16T111226.201.json
+
+###
+
+GET https://localhost:7042/api/v1/Products
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T110056.200.json
+
+###
+
+POST https://localhost:7042/api/v1/Products
+Content-Type: application/json
+Accept: application/json
+Content-Length: 119
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+<> 2023-05-16T110034.201.json
+
+###
+
+POST https://localhost:7042/api/v1/Products
+accept: application/json
+Content-Length: 119
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+###
+
+POST https://localhost:7042/api/v1/Products
+accept: application/json
+Content-Length: 119
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+
+###
+
+POST https://localhost:7042/api/v1/Products
+accept: application/json
+Content-Length: 89
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "string"
+}
+
+###
+
+POST https://localhost:7042/api/v1/Products
+accept: application/json
+Content-Length: 89
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "string",
+  "description": "string",
+  "price": 0,
+  "categoryId": "string"
+}
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+accept: application/json
+Content-Length: 69
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+###
+
+POST https://localhost:7042/api/v1/Categories
+accept: application/json
+content-type: application/json
+Content-Length: 69
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+<> 2023-05-16T105354.500.json
+
+###
+
+GET https://localhost:7042/api/v1/Categories
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-16T105350.200.json
+
+###
+
+PUT https://localhost:5084/api/v1/Users/88c9255a-5b79-48d1-9441-44d4556d0134
+content-type: application/json
+accept: application/json
+Content-Length: 112
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "password": "password1"
+}
+
+<> 2023-05-15T233002.200.json
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T232952.200.json
+
+###
+
+PUT https://localhost:5084/api/v1/Users/88c9255a-5b79-48d1-9441-44d4556d0134
+content-type: application/json
+accept: application/json
+Content-Length: 112
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "password": "password1"
+}
+
+<> 2023-05-15T232943.200.json
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T232932.200.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password"
+}
+
+<> 2023-05-15T232928.201.json
+
+###
+
+PUT https://localhost:5084/api/v1/Users/88c9255a-5b79-48d1-9441-44d4556d0134
+content-type: application/json
+accept: application/json
+Content-Length: 85
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com"
+}
+
+<> 2023-05-15T232907.400.json
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T232759.200.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password"
+}
+
+<> 2023-05-15T232635.201.json
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T232121.200.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password"
+}
+
+<> 2023-05-15T232114.201.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password"
+}
+
+<> 2023-05-15T230732.201.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+<> 2023-05-15T225232.400.json
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T225202.200.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+<> 2023-05-15T225158.400.json
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+
+POST https://localhost:5084/api/v1/Users
+content-type: application/json
+accept: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+
+GET https://localhost:5084/api/v1/Users
+accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-05-15T224351.200.json
+
+###
+
+POST https://localhost:5084/api/v1/users
+Content-Type: application/json
+Content-Length: 98
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "John",
+  "lastname": "Doe",
+  "email": "john.doe@email.com",
+  "password": "123456"
+}
+
+###
+

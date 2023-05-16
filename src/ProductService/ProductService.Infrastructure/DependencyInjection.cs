@@ -25,6 +25,7 @@ public static class DependencyInjection
             options.UseInMemoryDatabase("ProductServiceDatabase"));
 
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
 
         return services;
