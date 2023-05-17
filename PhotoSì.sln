@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookService.Api", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookService.Tests", "src\AddressBookService\Tests\AddressBookService.Tests.csproj", "{4CAAEF00-92D0-4EF0-B316-4B0719105174}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{737AF0D5-D5E4-4390-9886-8CBBC130A235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService.Api", "src\Gateway\GatewayService.Api\GatewayService.Api.csproj", "{D1FD3019-55E2-44E8-874D-753246A6D35E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +143,10 @@ Global
 		{4CAAEF00-92D0-4EF0-B316-4B0719105174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CAAEF00-92D0-4EF0-B316-4B0719105174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CAAEF00-92D0-4EF0-B316-4B0719105174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FD3019-55E2-44E8-874D-753246A6D35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1FD3019-55E2-44E8-874D-753246A6D35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FD3019-55E2-44E8-874D-753246A6D35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1FD3019-55E2-44E8-874D-753246A6D35E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +176,8 @@ Global
 		{F3A0DE8A-C8CF-426F-B7D6-9A5F6E2E0227} = {37957678-19B6-493D-ABDD-6F0E5E745D51}
 		{6CB8900D-1AC9-46A1-B34A-F74E33EA81E4} = {37957678-19B6-493D-ABDD-6F0E5E745D51}
 		{4CAAEF00-92D0-4EF0-B316-4B0719105174} = {37957678-19B6-493D-ABDD-6F0E5E745D51}
+		{737AF0D5-D5E4-4390-9886-8CBBC130A235} = {0AD89427-67E5-4B30-9F8F-8C08AE0CE2D6}
+		{D1FD3019-55E2-44E8-874D-753246A6D35E} = {737AF0D5-D5E4-4390-9886-8CBBC130A235}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F15B3C2-A8C9-4FDB-8332-0FB8957C09E9}

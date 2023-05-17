@@ -1,0 +1,159 @@
+{
+  "Routes": [
+    // UserService
+    {
+      "UpstreamPathTemplate": "/gateway/users",
+      "DownstreamPathTemplate": "/api/v1/Users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5084"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/users/{id}",
+      "DownstreamPathTemplate": "/api/v1/Users/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5084"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    // ProductService
+    {
+      "UpstreamPathTemplate": "/gateway/products",
+      "DownstreamPathTemplate": "/api/v1/Products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7042"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/products/{id}",
+      "DownstreamPathTemplate": "/api/v1/Products/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7042"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    // OrderService
+    {
+      "UpstreamPathTemplate": "/gateway/orders",
+      "DownstreamPathTemplate": "/api/v1/Orders",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5091"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/orders/{id}",
+      "DownstreamPathTemplate": "/api/v1/Orders/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5091"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    // AddressService
+    {
+      "UpstreamPathTemplate": "/gateway/addresses",
+      "DownstreamPathTemplate": "/api/v1/Addresses",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5085"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/addresses/{id}",
+      "DownstreamPathTemplate": "/api/v1/Addresses/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5085"
+        }
+      ],
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5080"
+  }
+}
