@@ -22,7 +22,7 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddDbContext<OrderServiceDbContext>(options =>
-            options.UseInMemoryDatabase("OrderServiceDatabase"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();

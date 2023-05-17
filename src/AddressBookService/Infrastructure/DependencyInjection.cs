@@ -22,7 +22,7 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddDbContext<AddressBookServiceDbContext>(options =>
-            options.UseInMemoryDatabase("AddressBookServiceDatabase"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IAddressRepository, AddressRepository>();
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();

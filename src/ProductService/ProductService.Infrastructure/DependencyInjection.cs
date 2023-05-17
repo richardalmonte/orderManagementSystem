@@ -22,7 +22,7 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddDbContext<ProductServiceDbContext>(options =>
-            options.UseInMemoryDatabase("ProductServiceDatabase"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();

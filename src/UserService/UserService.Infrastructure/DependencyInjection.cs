@@ -22,7 +22,7 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         services.AddDbContext<UserServiceDbContext>(options =>
-            options.UseInMemoryDatabase("UserServiceDatabase"));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
