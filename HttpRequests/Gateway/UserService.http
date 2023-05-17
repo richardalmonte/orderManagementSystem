@@ -1,0 +1,46 @@
+﻿
+
+### Get Users
+GET {{host}}/users
+accept: application/json
+
+###
+
+
+### Create User
+POST {{host}}/users
+content-type: application/json
+accept: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password"
+}
+
+### Update User
+< {%
+    request.variables.set("userId", "88c9255a-5b79-48d1-9441-44d4556d0134")
+%}
+
+PUT {{host}}/users/{{userId}}
+content-type: application/json
+accept: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "password": "password1"
+}
+
+### Delete User
+< {%
+    request.variables.set("userId", "88c9255a-5b79-48d1-9441-44d4556d0134")
+%}
+DELETE {{host}}/users/{{userId}}
+accept: application/json
+
+
+ 

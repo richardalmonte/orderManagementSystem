@@ -1,0 +1,50 @@
+﻿### Get Categories
+
+GET {{host}}/categories
+accept: application/json
+
+### Get Category
+< {%
+    request.variables.set("categoryId", "4dd1dff8-e071-4195-afdb-97bf178f6e81")
+%}
+
+GET {{host}}/categories/{{categoryId}}
+accept: application/json
+
+### Create Category
+
+POST {{host}}/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+### Update Category
+< {%
+    request.variables.set("categoryId", "4dd1dff8-e071-4195-afdb-97bf178f6e81")
+%}
+
+PUT {{host}}/categories/{{categoryId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Category 1 Updated",
+  "description": "Category 1 description"
+}
+
+
+### Delete Category
+
+< {%
+    request.variables.set("categoryId", "cf18e533-7555-4578-bc71-464d6da8fe35")
+%}
+
+DELETE {{host}}/categories/{{categoryId}}
+accept: application/json
+
+
+
