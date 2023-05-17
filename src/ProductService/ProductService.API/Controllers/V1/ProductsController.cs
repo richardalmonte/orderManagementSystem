@@ -41,7 +41,7 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<ProductResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetProduct(Guid productId)
+    public async Task<IActionResult> GetProduct([FromRoute] Guid productId)
     {
         try
         {
@@ -54,6 +54,26 @@ public class ProductsController : ControllerBase
 
             var productResponse = _mapper.Map<ProductResponse>(product);
             return Ok(productResponse);
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }
+    }
+
+
+    [HttpGet(ApiRoutes.Products.GetByCategoryName)]
+    [ProducesResponseType(typeof(IEnumerable<ProductResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> GetProductsByCategory([FromRoute] string categoryName)
+    {
+        try
+        {
+            var products = await _productService.GetProductsByCategoryNameAsync(categoryName);
+
+            var productResponses = _mapper.Map<IEnumerable<ProductResponse>>(products);
+            return Ok(productResponses);
         }
         catch (Exception)
         {
@@ -80,7 +100,8 @@ public class ProductsController : ControllerBase
 
             var createdProduct = await _productService.CreateProductAsync(productRequest);
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
-            var locationUri = baseUrl + "/" + ApiRoutes.Products.Get.Replace("{productId}", createdProduct.Id.ToString());
+            var locationUri =
+                baseUrl + "/" + ApiRoutes.Products.Get.Replace("{productId}", createdProduct.Id.ToString());
 
             var response = _mapper.Map<ProductResponse>(createdProduct);
             return Created(locationUri, response);
@@ -98,7 +119,7 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateProduct(Guid productId, [FromBody] ProductUpdateRequest request)
+    public async Task<IActionResult> UpdateProduct([FromRoute] Guid productId, [FromBody] ProductUpdateRequest request)
     {
         try
         {
@@ -124,7 +145,7 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteProduct(Guid productId)
+    public async Task<IActionResult> DeleteProduct([FromRoute] Guid productId)
     {
         var product = await _productService.GetProductByIdAsync(productId);
         if (product is null)

@@ -35,7 +35,20 @@ public class ProductService : IProductService
     {
         return _productRepository.GetAllProductsAsync();
     }
+    
+    public Task<IEnumerable<Product>> GetProductsByCategoryNameAsync(string category)
+    {
+        ArgumentNullException.ThrowIfNull(category);
 
+        if (category == string.Empty)
+        {
+            throw new ArgumentNullException(nameof(category));
+        }
+
+        return _productRepository.GetProductsByCategoryNameAsync(category);
+    }
+    
+    
     public async Task<Product> UpdateProductAsync(Product product)
     {
         ArgumentNullException.ThrowIfNull(product);
@@ -59,4 +72,6 @@ public class ProductService : IProductService
 
         return _productRepository.DeleteProductAsync(productId);
     }
+
+ 
 }

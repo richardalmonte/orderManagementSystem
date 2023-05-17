@@ -41,7 +41,7 @@ public class AddressesController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<AddressResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetAddress(Guid addressId)
+    public async Task<IActionResult> GetAddress([FromRoute] Guid addressId)
     {
         try
         {
@@ -99,7 +99,7 @@ public class AddressesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateAddress(Guid addressId, [FromBody] AddressUpdateRequest request)
+    public async Task<IActionResult> UpdateAddress([FromRoute] Guid addressId, [FromBody] AddressUpdateRequest request)
     {
         try
         {
@@ -125,7 +125,7 @@ public class AddressesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteAddress(Guid addressId)
+    public async Task<IActionResult> DeleteAddress([FromRoute] Guid addressId)
     {
         var address = await _addressService.GetAddressByIdAsync(addressId);
         if (address is null)

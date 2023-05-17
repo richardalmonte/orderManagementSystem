@@ -48,6 +48,22 @@ public class ProductRepository : IProductRepository
         return response;
     }
 
+    public async Task<IEnumerable<Product>> GetProductsByCategoryNameAsync(string category)
+    {
+        ArgumentNullException.ThrowIfNull(category);
+
+        if (category == string.Empty)
+        {
+            throw new ArgumentNullException(nameof(category));
+        }
+
+        var response = await _context.Products
+            .Include(x => x.Category)
+            .Where(x => x.Category.Name == category).ToListAsync();
+        
+        return response ?? throw new Exception("Product not found");
+    }
+
     public async Task<Product> UpdateProductAsync(Product product)
     {
         ArgumentNullException.ThrowIfNull(product);

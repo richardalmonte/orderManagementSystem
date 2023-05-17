@@ -41,7 +41,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<UserResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetUser(Guid userId)
+    public async Task<IActionResult> GetUser([FromRoute] Guid userId)
     {
         try
         {
@@ -98,7 +98,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateUser(Guid userId, [FromBody] UserUpdateRequest request)
+    public async Task<IActionResult> UpdateUser([FromRoute] Guid userId, [FromBody] UserUpdateRequest request)
     {
         try
         {
@@ -124,7 +124,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteUser(Guid userId)
+    public async Task<IActionResult> DeleteUser([FromRoute] Guid userId)
     {
         var user = await _userService.GetUserByIdAsync(userId);
         if (user is null)

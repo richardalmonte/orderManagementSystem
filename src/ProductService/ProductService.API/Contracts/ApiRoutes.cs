@@ -14,6 +14,7 @@ public static class ApiRoutes
         public const string GetAll = Base + "/Products";
         public const string Get = Base + "/Products/{productId}";
         public const string Delete = Base + "/Products/{productId}";
+        public const string GetByCategoryName = Base + "/Products/Category/{categoryName}";
     }
 
     public static class Categories

@@ -41,7 +41,7 @@ public class OrdersController : ControllerBase
     [ProducesResponseType(typeof(IEnumerable<OrderResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetOrder(Guid orderId)
+    public async Task<IActionResult> GetOrder([FromRoute] Guid orderId)
     {
         try
         {
@@ -76,7 +76,7 @@ public class OrdersController : ControllerBase
                 return BadRequest(ModelState);
             }
 
-            
+
             var orderRequest = _mapper.Map<Order>(request);
 
             var createdOrder = await _orderService.CreateOrderAsync(orderRequest);
@@ -99,7 +99,7 @@ public class OrdersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateOrder(Guid orderId, [FromBody] OrderUpdateRequest request)
+    public async Task<IActionResult> UpdateOrder([FromRoute] Guid orderId, [FromBody] OrderUpdateRequest request)
     {
         try
         {
@@ -125,7 +125,7 @@ public class OrdersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteOrder(Guid orderId)
+    public async Task<IActionResult> DeleteOrder([FromRoute] Guid orderId)
     {
         var order = await _orderService.GetOrderByIdAsync(orderId);
         if (order is null)
