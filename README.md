@@ -1,4 +1,4 @@
-# PhotoSì - Minimal Order Management System
+# Minimal Order Management System
 
 ## Description
 
